@@ -1,0 +1,21 @@
+[project]
+name = "sql-agent-llm"
+version = "0.1.0"
+description = "LLM-powered agent orchestrating SQL queries via MCP server tools"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain-openai>=0.2.0",
+    "langgraph>=0.2.30",
+    "langsmith>=0.1.82",
+    "mcp>=1.15.0",
+    "pydantic-settings>=2.2.1",
+    "structlog>=23.2.0",
+    "prometheus-client>=0.17.0",
+    "typer>=0.12.3",
+    "rich>=13.7.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
