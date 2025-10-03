@@ -1,0 +1,30 @@
+[project]
+name = "sql-agent-api"
+version = "0.1.0"
+description = "FastAPI backend for SQL agent LLM with MCP integration"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.27.0",
+    "sqlalchemy[asyncio]>=2.0.29",
+    "asyncpg>=0.29.0",
+    "pydantic-settings>=2.2.1",
+    "structlog>=23.2.0",
+    "prometheus-client>=0.17.0",
+    "httpx>=0.27.0",
+    "python-multipart>=0.0.7",
+    "sql-agent-llm",
+]
+
+[project.optional-dependencies]
+worker = [
+    "redis>=5.0.0",
+]
+
+[tool.uv.sources]
+sql-agent-llm = { path = "../sql_agent_llm" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
